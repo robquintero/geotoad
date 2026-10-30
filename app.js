@@ -85,6 +85,7 @@ const elements = {
   homeStartButton: $("#home-start-button"),
   homeFreestyleButton: $("#home-freestyle-button"),
   homeDescription: $(".home-description"),
+  homeCountdown: $("#home-countdown"),
   frogCaption: $("#frog-caption"),
   frogQuestionBadge: $("#frog-question-badge"),
   pondCanvas: $("#pond-canvas"),
@@ -270,6 +271,8 @@ function init() {
   renderState();
   bindEvents();
   startPondRenderer();
+  updateHomeDailyCountdown();
+  window.setInterval(updateHomeDailyCountdown, 1000);
   window.setInterval(checkLocalDay, 30000);
   document.addEventListener("visibilitychange", checkLocalDay);
 }
@@ -512,6 +515,7 @@ function renderHome() {
   elements.homeDescription.textContent = hasCompletedToday
     ? "Today's hop is complete. Come see how you did."
     : "Your first hop is ready. Five rounds, sixty seconds each. Let's see how far you can go.";
+  updateHomeDailyCountdown();
   elements.homeFreestyleButton.hidden = false;
   elements.startButtonLabel.textContent = hasCompletedToday ? "VIEW TODAY'S SCORE" : "BEGIN TODAY'S HOP";
   elements.startButton.disabled = false;
@@ -590,6 +594,22 @@ function checkLocalDay() {
   elements.dailyBadgeLabel.textContent = "TODAY'S CHALLENGE";
   resetPondToCurrentProgress();
   renderState();
+}
+
+function updateHomeDailyCountdown() {
+  if (!elements.gameLayout.classList.contains("is-home")) return;
+  const now = new Date();
+  if (dateKey(now) !== today) {
+    checkLocalDay();
+    if (!elements.gameLayout.classList.contains("is-home")) return;
+  }
+  const nextMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+  const remaining = Math.max(0, nextMidnight.getTime() - now.getTime());
+  const hours = String(Math.floor(remaining / 3600000)).padStart(2, "0");
+  const minutes = String(Math.floor((remaining % 3600000) / 60000)).padStart(2, "0");
+  const seconds = String(Math.floor((remaining % 60000) / 1000)).padStart(2, "0");
+  elements.homeCountdown.dateTime = nextMidnight.toISOString();
+  elements.homeCountdown.textContent = `${hours}:${minutes}:${seconds}`;
 }
 
 function getDailyGameNumber(key) {

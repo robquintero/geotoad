@@ -2380,6 +2380,36 @@ h1 > span { color: inherit; }
   white-space: nowrap;
 }
 
+.game-layout.is-home .home-start-button,
+.game-layout.is-home .home-freestyle-button {
+  font-size: 10px;
+}
+
+.game-layout.is-home .home-start-button > span,
+.game-layout.is-home .home-freestyle-button > span {
+  font-size: 13px;
+  line-height: 1;
+}
+
+.home-countdown {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 9px;
+  margin: 18px 0 0;
+  color: rgba(255, 255, 255, .76);
+  font: 600 8px/1 var(--sans);
+  letter-spacing: .14em;
+  text-shadow: 0 1px 4px rgba(0, 8, 24, .58);
+}
+
+.home-countdown time {
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+  font-size: 11px;
+  letter-spacing: .12em;
+}
+
 .result-dialog,
 .help-dialog {
   border-color: rgba(235, 248, 255, .48);
