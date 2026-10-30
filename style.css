@@ -2367,6 +2367,33 @@ h1 > span { color: inherit; }
   stroke: #ffd18a;
 }
 
+.game-layout.is-home .home-screen > .home-start-button,
+.game-layout.is-home .home-screen > .home-freestyle-button {
+  width: min(100%, 300px);
+  height: 52px;
+  min-height: 52px;
+  margin-right: 0;
+  margin-left: 0;
+  padding-right: 18px;
+  padding-left: 18px;
+  flex: 0 0 52px;
+  white-space: nowrap;
+}
+
+.result-dialog,
+.help-dialog {
+  border-color: rgba(235, 248, 255, .48);
+  background:
+    radial-gradient(ellipse at 18% 0, rgba(255, 255, 255, .2), transparent 48%),
+    linear-gradient(145deg, rgba(112, 165, 202, .32), rgba(20, 45, 70, .72));
+  box-shadow:
+    0 34px 100px rgba(0, 8, 24, .38),
+    inset 0 1px 0 rgba(255, 255, 255, .48),
+    inset 0 -1px 0 rgba(193, 230, 255, .18);
+  -webkit-backdrop-filter: saturate(155%) blur(28px);
+  backdrop-filter: saturate(155%) blur(28px);
+}
+
 .game-layout.is-home .home-kicker,
 .game-layout.is-home .home-subtitle,
 .game-layout.is-home .home-description {
