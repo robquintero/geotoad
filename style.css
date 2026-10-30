@@ -1196,6 +1196,12 @@ h1 > span { color: var(--green); }
   }
 }
 
+@media (max-width: 700px) {
+  .input-wrap input {
+    font-size: 16px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .game-layout,
   .game-layout.is-home .play-card > :not(.home-screen):not(.game-help-button),
