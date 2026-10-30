@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#071426">
+    <meta name="description" content="Five quick geography questions. One little toad. A new adventure every day.">
+    <link rel="canonical" href="https://geotoad.io/">
+    <meta property="og:url" content="https://geotoad.io/">
+    <meta property="og:title" content="Geotoad — a daily geography game">
+    <meta property="og:description" content="Five quick geography questions. One little toad. A new adventure every day.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://geotoad.io/assets/geotoad-social.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Geotoad geography game: a little frog hopping across lily pads">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Geotoad — a daily geography game">
+    <meta name="twitter:description" content="Five quick geography questions. One little toad. A new adventure every day.">
+    <meta name="twitter:image" content="https://geotoad.io/assets/geotoad-social.png">
+    <title>Geotoad — a daily geography game</title>
+    <link rel="icon" type="image/png" href="assets/sprites/frog-rest.png">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Geotoad home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 36 36" aria-hidden="true">
+              <path d="M5 19c0-7.4 5.8-13 13-13s13 5.6 13 13c0 6.7-5.7 12-13 12S5 25.7 5 19Z"></path>
+              <path d="M8 12 5.5 7.5 12 9m16 3 2.5-4.5L24 9"></path>
+              <circle cx="13" cy="17" r="1.7"></circle><circle cx="23" cy="17" r="1.7"></circle>
+              <path d="M14 23c2.6 2 5.4 2 8 0"></path>
+            </svg>
+          </span>
+          <span>geo<span class="brand-five">toad</span></span>
+        </a>
+        <div class="topbar-center"><span class="live-dot"></span><span id="today-label">YOUR DAILY HOP</span></div>
+        <button class="streak-pill" id="streak-button" type="button" aria-label="Current streak">
+          <span aria-hidden="true">✳</span> <span id="streak-count">0</span> day streak
+        </button>
+      </header>
+
+      <main>
+        <section class="intro-row" aria-labelledby="page-title">
+          <div>
+            <div class="eyebrow"><span class="eyebrow-line"></span> A SMALL DAILY ADVENTURE</div>
+            <h1 id="page-title">Know the world.<br><span>Hop to it.</span></h1>
+          </div>
+          <p class="intro-copy">Five geography questions. Sixty seconds each.<br>Help our little toad find its way across the pond.</p>
+        </section>
+
+        <section class="game-layout" aria-label="Geotoad geography challenge">
+          <article class="play-card">
+            <div class="card-topline">
+              <div class="daily-badge"><span class="badge-star">✳</span> <span id="daily-badge-label">TODAY'S CHALLENGE</span></div>
+              <div class="game-number" id="game-number">HOP NO. 001</div>
+              <div class="mobile-round-status" aria-hidden="true">
+                <span class="mobile-round-index"></span>
+                <span class="mobile-round-category"></span>
+              </div>
+              <div class="mobile-score" aria-label="Current score">
+                <span>SCORE</span>
+                <strong id="current-score">0</strong>
+              </div>
+            </div>
+            <div class="home-screen" id="home-screen">
+              <p class="home-kicker">A GEOGRAPHY GAME</p>
+              <h1 class="home-title">GEO<span>TOAD</span></h1>
+              <p class="home-subtitle">THE DAILY HOP</p>
+              <p class="home-description">Your first hop is ready. Five rounds, sixty seconds each. Let's see how far you can go.</p>
+              <button class="home-start-button" id="home-start-button" type="button">START TODAY'S HOP <span aria-hidden="true">→</span></button>
+              <button class="home-freestyle-button" id="home-freestyle-button" type="button">PLAY FREESTYLE <span aria-hidden="true">↗</span></button>
+            </div>
+            <button class="game-help-button" id="game-help-button" type="button" aria-label="How to play" title="How to play">?</button>
+
+            <div class="progress-row" aria-label="Question progress">
+              <div class="progress-dots" id="progress-dots"></div>
+              <div class="progress-count" id="progress-count">READY · 5 QUESTIONS</div>
+            </div>
+
+            <div class="question-area" id="question-area">
+              <div class="question-meta">
+                <span class="question-index" id="question-index">READY WHEN YOU ARE</span>
+                <span class="category-pill" id="category-pill">WORLD TOUR</span>
+              </div>
+              <h2 class="question-title" id="question-title">Five questions.<br>A whole world.</h2>
+              <p class="question-note" id="question-note">Name as many answers as you can before the clock runs out. Every correct answer earns points.</p>
+            </div>
+            <div class="answer-area" id="answer-area" hidden>
+              <form id="answer-form" autocomplete="off">
+                <label class="sr-only" for="answer-input">Type an answer</label>
+                <div class="input-wrap">
+                  <span class="input-marker" aria-hidden="true"></span>
+                  <input id="answer-input" name="answer" type="text" placeholder="Type an answer, then press enter..." enterkeyhint="send" autocapitalize="words" spellcheck="false" disabled>
+                  <button class="submit-button" type="submit" aria-label="Submit answer" disabled>
+                    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3.5 10h12m-5-5 5 5-5 5"></path></svg>
+                  </button>
+                </div>
+              </form>
+              <div class="answer-feedback" id="answer-feedback" aria-live="polite"></div>
+              <div class="mistake-meter" aria-label="Three wrong guesses allowed">
+                <span class="mistake-label">WRONG GUESSES</span>
+                <span class="mistake-dots" id="mistake-dots">
+                  <i></i><i></i><i></i>
+                </span>
+                <span class="mistake-count" id="mistake-count">0 / 3</span>
+              </div>
+              <div class="found-label"><span>FOUND SO FAR</span><span id="found-count">0 / 0</span></div>
+              <div class="answer-chips" id="answer-chips" aria-live="polite"></div>
+            </div>
+
+            <div class="card-bottom">
+              <div class="clock-display">
+                <div class="clock-face" id="clock-face" aria-label="60 seconds remaining">
+                  <svg viewBox="0 0 48 48" aria-hidden="true">
+                    <circle class="clock-track" cx="24" cy="24" r="20"></circle>
+                    <circle class="clock-progress" id="clock-progress" cx="24" cy="24" r="20"></circle>
+                  </svg>
+                  <span id="timer-value">60</span>
+                </div>
+                <div class="clock-copy"><strong id="clock-title">THE CLOCK IS YOURS</strong><span id="clock-subtitle">60 SECONDS PER QUESTION</span></div>
+              </div>
+              <button class="start-button" id="start-button" type="button">
+                <span id="start-button-label">START TODAY'S GAME</span>
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12m-5-5 5 5-5 5"></path></svg>
+              </button>
+            </div>
+          </article>
+
+          <aside class="frog-card" aria-label="Your frog's lily-pad trail">
+            <div class="frog-card-head">
+              <div><span class="frog-label">ONE LITTLE FROG</span><span class="frog-subtitle" id="frog-caption">Every right answer earns a hop.</span></div>
+              <span class="frog-badge" id="frog-question-badge">READY TO HOP</span>
+            </div>
+            <div class="frog-stage" id="frog-stage">
+              <canvas class="pond-canvas" id="pond-canvas" role="img" aria-label="Geotoad hopping forward from lily pad to lily pad across animated blue water"></canvas>
+              <div class="stage-whisper" aria-hidden="true">ribbit!</div>
+              <div class="stage-caption"><span class="frog-star">✳</span> ONE GOOD HOP AT A TIME</div>
+            </div>
+            <div class="frog-legend">
+              <span><i class="legend-dot"></i> LILY-PAD TRAIL</span>
+              <span id="hop-progress-label">0 / 14 HOPS</span>
+            </div>
+          </aside>
+        </section>
+
+        <section class="below-row" aria-label="Your daily stats and how to play">
+          <div class="mini-stat"><span class="mini-stat-icon">↗</span><span><strong id="best-score">—</strong><small>PERSONAL BEST</small></span></div>
+          <div class="mini-stat"><span class="mini-stat-icon">◎</span><span><strong id="played-count">0</strong><small>GAMES PLAYED</small></span></div>
+          <div class="community-note"><span class="community-dot"></span> A NEW HOP EVERY DAY <span class="community-faint">· YOUR SCORE STAYS YOURS</span></div>
+        </section>
+      </main>
+
+      <footer class="footer"><span>© <span id="footer-year"></span> GEOTOAD</span><span>MADE FOR THE MAP-CURIOUS</span><span>NOT A TEST. JUST A LITTLE ADVENTURE.</span></footer>
+    </div>
+
+    <dialog class="result-dialog" id="result-dialog" aria-labelledby="result-title">
+      <div class="result-inner">
+        <button class="dialog-close" id="close-result" type="button" aria-label="Close results">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 4 8 8m0-8-8 8"></path></svg>
+        </button>
+        <div class="eyebrow"><span class="eyebrow-line"></span><span id="result-type-label">DAILY MAP COMPLETE</span></div>
+        <div class="result-kicker" id="result-kicker">NICELY NAVIGATED</div>
+        <h2 id="result-title">You found your way.</h2>
+        <div class="result-score"><strong id="result-score">0</strong><span>POINTS</span></div>
+        <p class="result-summary" id="result-summary"></p>
+        <div class="result-stats" aria-label="Answer summary">
+          <div class="result-stat"><span>FOUND</span><strong id="result-found">0</strong></div>
+          <div class="result-stat"><span>MISSED</span><strong id="result-missed">0</strong></div>
+          <div class="result-stat"><span>RARE + EPIC</span><strong id="result-epic">0</strong></div>
+        </div>
+        <div class="result-rarity-legend" aria-label="Answer point values">
+          <span data-rarity="common">COMMON · 25 PTS</span>
+          <span data-rarity="rare">RARE · 50 PTS</span>
+          <span data-rarity="epic">EPIC · 100 PTS</span>
+          <span>+100 ALL-FOUND BONUS</span>
+        </div>
+        <div class="result-breakdown" id="result-breakdown"></div>
+        <button class="share-button" id="share-button" type="button">COPY YOUR RESULT <span aria-hidden="true">↗</span></button>
+        <div class="share-status" id="share-status" aria-live="polite"></div>
+        <button class="share-button freestyle-again-button" id="freestyle-again" type="button">PLAY ANOTHER FREESTYLE <span aria-hidden="true">↗</span></button>
+        <button class="result-home-button" id="return-home" type="button">RETURN TO HOME <span aria-hidden="true">⌂</span></button>
+        <p class="leaderboard-note" id="result-persistence-note">Your daily score and answers are saved on this device.</p>
+      </div>
+    </dialog>
+
+    <dialog class="help-dialog" id="help-dialog" aria-labelledby="help-title">
+      <div class="help-inner">
+        <button class="dialog-close" id="close-help" type="button" aria-label="Close how to play">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 4 8 8m0-8-8 8"></path></svg>
+        </button>
+        <div class="eyebrow"><span class="eyebrow-line"></span> THE SHORT VERSION</div>
+        <h2 id="help-title">How to play</h2>
+        <ol class="help-list">
+          <li><span>01</span><div><strong>Five questions, one at a time.</strong><p>A fresh set of geography prompts arrives every day.</p></div></li>
+          <li><span>02</span><div><strong>Race the 60-second clock.</strong><p>Type an answer and press enter. Common, rare, and epic answers are worth different points.</p></div></li>
+          <li><span>03</span><div><strong>Three wrong guesses per question.</strong><p>Spell a country a little off? Froggy will suggest what you meant.</p></div></li>
+          <li><span>04</span><div><strong>Find them all for a bonus.</strong><p>Daily results are saved on this device. Freestyle is unlimited and never changes your stats.</p></div></li>
+        </ol>
+        <button class="share-button help-done" id="close-help-done" type="button">GOT IT <span aria-hidden="true">→</span></button>
+      </div>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="question-bank-list.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

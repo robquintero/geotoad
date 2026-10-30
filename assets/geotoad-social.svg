@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Geotoad — a daily geography game</title>
+  <desc id="description">A geography question on a glass card, with round, score and timer indicators, beside a little frog hopping over lily pads on a blue-green pond.</desc>
+  <defs>
+    <linearGradient id="ocean" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#08172a"/>
+      <stop offset=".48" stop-color="#087081"/>
+      <stop offset="1" stop-color="#39b6aa"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".78" cy=".45" r=".65">
+      <stop offset="0" stop-color="#a1e2c6" stop-opacity=".48"/>
+      <stop offset="1" stop-color="#56d3c4" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2=".95" y2="1">
+      <stop stop-color="#fff" stop-opacity=".98"/>
+      <stop offset="1" stop-color="#f2f7f5" stop-opacity=".94"/>
+    </linearGradient>
+    <linearGradient id="pad" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#b9e36e"/>
+      <stop offset="1" stop-color="#5ca96c"/>
+    </linearGradient>
+    <linearGradient id="frog" x1=".2" y1="0" x2=".85" y2="1">
+      <stop stop-color="#c1ec70"/>
+      <stop offset="1" stop-color="#64bd62"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#031624" flood-opacity=".28"/>
+    </filter>
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="11"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#ocean)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <g fill="none" stroke="#d4fff0" stroke-linecap="round" opacity=".12">
+    <path d="M-25 104c123-36 209-30 320 0s188 31 293 0 214-34 334-2 205 39 322 7" stroke-width="2"/>
+    <path d="M-80 142c104-24 194-18 280 5s181 26 277 2 207-29 311 1 199 36 311 9" stroke-width="1.5"/>
+    <path d="M-32 563c137-32 218-25 333 4s203 28 302-1 202-29 304 2 195 36 328 0" stroke-width="2"/>
+  </g>
+  <g fill="#e1fff2" opacity=".34">
+    <circle cx="1018" cy="94" r="2"/><circle cx="1084" cy="142" r="3"/>
+    <circle cx="947" cy="171" r="1.8"/><circle cx="1144" cy="231" r="2"/>
+    <circle cx="847" cy="112" r="1.6"/><circle cx="775" cy="520" r="2.4"/>
+  </g>
+
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <g transform="translate(62 40)">
+      <path d="M0 16c0-7.4 5.8-13 13-13s13 5.6 13 13c0 6.7-5.7 12-13 12S0 22.7 0 16Z" fill="#a5df65"/>
+      <path d="m3.3 8.2-2-5.1 5.5 1.8m13.4 3.3 2-5.1-5.5 1.8" fill="none" stroke="#a5df65" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <circle cx="9" cy="13" r="1.6" fill="#f8f8e9"/><circle cx="17" cy="13" r="1.6" fill="#f8f8e9"/>
+      <path d="M9 19c2.6 2 5.4 2 8 0" fill="none" stroke="#24563e" stroke-linecap="round" stroke-width="1.5"/>
+      <text x="38" y="22" fill="#fff" font-size="24" font-weight="750" letter-spacing="-.8">geo<tspan fill="#bce77b">toad</tspan></text>
+    </g>
+    <g transform="translate(805 47)" fill="#f4fffd">
+      <circle cx="0" cy="8" r="4" fill="#c1ec70"/>
+      <text x="14" y="13" font-size="11" font-weight="700" letter-spacing="2.1" opacity=".9">YOUR DAILY HOP</text>
+    </g>
+    <text x="1135" y="65" text-anchor="end" fill="#effffb" font-size="12" font-weight="650" letter-spacing="1.5" opacity=".8">GEOGRAPHY, ONE HOP AT A TIME</text>
+  </g>
+
+  <g filter="url(#cardShadow)">
+    <rect x="62" y="111" width="650" height="454" rx="27" fill="url(#glass)" stroke="#fff" stroke-opacity=".85"/>
+    <path d="M90 112h594" stroke="#fff" stroke-opacity=".85" stroke-width="2"/>
+  </g>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <rect x="94" y="141" width="182" height="30" rx="15" fill="#e7f0e2"/>
+    <text x="108" y="161" fill="#355b45" font-size="10" font-weight="750" letter-spacing="1.2">✳  TODAY'S CHALLENGE</text>
+    <text x="677" y="161" text-anchor="end" fill="#798a80" font-size="10" font-weight="700" letter-spacing="1.1">HOP NO. 014</text>
+
+    <g transform="translate(94 195)">
+      <rect width="145" height="43" rx="13" fill="#f4f6f1" stroke="#dfe6dc"/>
+      <text x="15" y="17" fill="#829088" font-size="9" font-weight="700" letter-spacing="1.1">ROUND</text>
+      <text x="15" y="34" fill="#203c35" font-size="14" font-weight="750">02 <tspan fill="#91a198" font-weight="500">/ 05</tspan></text>
+      <rect x="158" width="145" height="43" rx="13" fill="#f4f6f1" stroke="#dfe6dc"/>
+      <text x="173" y="17" fill="#829088" font-size="9" font-weight="700" letter-spacing="1.1">SCORE</text>
+      <text x="173" y="34" fill="#203c35" font-size="14" font-weight="750">1,250</text>
+      <rect x="316" width="145" height="43" rx="13" fill="#f4f6f1" stroke="#dfe6dc"/>
+      <circle cx="337" cy="21.5" r="12" fill="none" stroke="#cbd8cc" stroke-width="2.5"/>
+      <path d="M337 9.5a12 12 0 1 1-10.4 18" fill="none" stroke="#71a968" stroke-linecap="round" stroke-width="2.5"/>
+      <text x="359" y="18" fill="#829088" font-size="9" font-weight="700" letter-spacing="1">TIME LEFT</text>
+      <text x="359" y="34" fill="#203c35" font-size="14" font-weight="750">42 sec</text>
+    </g>
+
+    <text x="96" y="278" fill="#72927a" font-size="10" font-weight="750" letter-spacing="1.8">WORLD TOUR  ·  QUESTION 02</text>
+    <text x="94" y="327" fill="#18372f" font-size="30" font-weight="720" letter-spacing="-.7">Which countries border</text>
+    <text x="94" y="364" fill="#18372f" font-size="30" font-weight="720" letter-spacing="-.7">the Mediterranean Sea?</text>
+    <text x="96" y="394" fill="#718078" font-size="13" font-weight="450">Name as many as you can before the clock runs out.</text>
+
+    <rect x="94" y="421" width="582" height="58" rx="15" fill="#fff" stroke="#d5ded6" stroke-width="1.5"/>
+    <circle cx="117" cy="450" r="4" fill="#83b878"/>
+    <text x="133" y="455" fill="#a1aaa3" font-size="14" font-weight="450">Type an answer, then press enter...</text>
+    <rect x="626" y="429" width="42" height="42" rx="12" fill="#245c49"/>
+    <path d="M638 450h17m-6-6 6 6-6 6" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+
+    <g>
+      <text x="96" y="514" fill="#77867d" font-size="9" font-weight="750" letter-spacing="1.3">FOUND SO FAR</text>
+      <text x="676" y="514" text-anchor="end" fill="#77867d" font-size="9" font-weight="750" letter-spacing="1.3">3 WRONG GUESSES ALLOWED</text>
+      <rect x="96" y="527" width="84" height="23" rx="11.5" fill="#e6f0df"/>
+      <text x="138" y="543" text-anchor="middle" fill="#42694a" font-size="10" font-weight="650">Spain</text>
+      <rect x="188" y="527" width="85" height="23" rx="11.5" fill="#e6f0df"/>
+      <text x="230.5" y="543" text-anchor="middle" fill="#42694a" font-size="10" font-weight="650">France</text>
+      <rect x="281" y="527" width="79" height="23" rx="11.5" fill="#e6f0df"/>
+      <text x="320.5" y="543" text-anchor="middle" fill="#42694a" font-size="10" font-weight="650">Italy</text>
+      <circle cx="642" cy="538.5" r="4" fill="#df9c59"/><circle cx="656" cy="538.5" r="4" fill="#dfe4dc"/><circle cx="670" cy="538.5" r="4" fill="#dfe4dc"/>
+    </g>
+  </g>
+
+  <g>
+    <ellipse cx="955" cy="516" rx="229" ry="30" fill="#031e2c" opacity=".29" filter="url(#softShadow)"/>
+    <g fill="none" stroke="#d5fff2" stroke-linecap="round" opacity=".3">
+      <path d="M758 475c43-13 83-13 121 0" stroke-width="2"/>
+      <path d="M1014 445c30-10 58-10 85 1" stroke-width="1.5"/>
+      <path d="M1062 514c42-10 79-7 112 5" stroke-width="2"/>
+      <path d="M828 554c31-8 61-7 91 2" stroke-width="1.5"/>
+    </g>
+    <g transform="translate(747 438) rotate(-8)">
+      <ellipse cx="57" cy="16" rx="58" ry="17" fill="url(#pad)"/>
+      <path d="M2 14c29-14 74-15 108 1-29 7-76 9-108-1Z" fill="#d1ef84" opacity=".52"/>
+      <path d="M57 15 18 2m39 13 44-12M57 15l4 15" fill="none" stroke="#51955c" stroke-opacity=".7" stroke-width="1.4"/>
+      <path d="M57 15 66 8" stroke="#eaf7bd" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(1032 479) rotate(8)">
+      <ellipse cx="57" cy="17" rx="64" ry="19" fill="url(#pad)"/>
+      <path d="M4 16c31-15 80-16 117 1-32 8-83 9-117-1Z" fill="#d1ef84" opacity=".5"/>
+      <path d="M60 17 20 4m40 13 47-13M60 17l-3 15" fill="none" stroke="#51955c" stroke-opacity=".68" stroke-width="1.4"/>
+      <path d="M60 17 69 9" stroke="#eaf7bd" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(864 535) rotate(-3)">
+      <ellipse cx="56" cy="15" rx="59" ry="16" fill="url(#pad)" opacity=".92"/>
+      <path d="M3 14c31-13 75-14 107 1-29 7-76 9-107-1Z" fill="#d1ef84" opacity=".48"/>
+      <path d="M56 15 20 4m36 11 43-11" fill="none" stroke="#51955c" stroke-opacity=".65" stroke-width="1.3"/>
+    </g>
+
+    <g fill="none" stroke="#e5fff2" stroke-linecap="round" opacity=".65">
+      <path d="m831 295 27-9m-17 25 21-4"/>
+      <path d="m1035 320 19-9m-13 24 18-3"/>
+      <path d="m1071 267 12-7"/>
+    </g>
+    <g transform="translate(856 207) rotate(-8 94 105)">
+      <ellipse cx="97" cy="127" rx="76" ry="57" fill="url(#frog)"/>
+      <ellipse cx="97" cy="143" rx="44" ry="32" fill="#d7f0a1" opacity=".84"/>
+      <path d="M48 119c-21 7-37 18-43 35 17 8 38 3 55-10m107-25c21 1 39 10 49 25-14 13-37 14-57 3" fill="url(#frog)" stroke="#64bd62" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M48 148c-16 11-27 24-26 39 17 8 35 1 49-13m105-26c18 7 31 18 34 33-15 12-35 11-52 0" fill="url(#frog)" stroke="#64bd62" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M39 184c-17 6-25 18-20 27 9 5 21 3 33-4m132-22c15 3 26 13 23 22-10 6-22 4-34-3" fill="none" stroke="#8bd564" stroke-linecap="round" stroke-width="8"/>
+      <ellipse cx="57" cy="76" rx="25" ry="28" fill="#a8e565"/>
+      <ellipse cx="137" cy="76" rx="25" ry="28" fill="#a8e565"/>
+      <ellipse cx="61" cy="73" rx="13" ry="16" fill="#fffde8"/>
+      <ellipse cx="133" cy="73" rx="13" ry="16" fill="#fffde8"/>
+      <ellipse cx="65" cy="76" rx="6" ry="8" fill="#142d36"/>
+      <ellipse cx="137" cy="76" rx="6" ry="8" fill="#142d36"/>
+      <circle cx="67" cy="73" r="2" fill="#fff"/>
+      <circle cx="139" cy="73" r="2" fill="#fff"/>
+      <path d="M72 112c15 11 34 15 51 9" fill="none" stroke="#39794e" stroke-linecap="round" stroke-width="3"/>
+      <circle cx="51" cy="106" r="5" fill="#f2a48a" opacity=".42"/>
+      <circle cx="147" cy="106" r="5" fill="#f2a48a" opacity=".42"/>
+    </g>
+    <text x="965" y="584" text-anchor="middle" fill="#e8fff5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" font-weight="700" letter-spacing="2" opacity=".9">ONE GOOD HOP AT A TIME</text>
+  </g>
+</svg>
